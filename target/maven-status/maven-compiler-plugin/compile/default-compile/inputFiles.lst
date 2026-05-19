@@ -1,0 +1,17 @@
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\EventhubApplication.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\controller\UserController.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\dto\UserRequestDTO.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\entity\Role.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\mapper\ProfileMapper.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\dto\ProfileDTO.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\entity\Profile.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\service\RoleService.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\security\SecurityConfig.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\repository\ProfileRepository.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\repository\RoleRepository.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\controller\AuthController.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\mapper\UserMapper.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\entity\User.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\repository\UserRepository.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\service\UserService.java
+C:\Users\DiMar\OneDrive\Desktop\EventHub\src\main\java\com\academy\eventhub\dto\UserResponseDTO.java

@@ -7,32 +7,66 @@ EventHub è una piattaforma backend sviluppata con Spring Boot per la gestione e
 ## 🛠️ Prerequisiti
 
 Prima di avviare il progetto, assicurati di aver installato sul tuo computer:
-* **Java 17** o superiore (JDK)
+* **Java 21** (JDK)
 * **Maven 3.x** (o utilizza il wrapper `mvnw` incluso)
-* **Docker** e **Docker Desktop** (fondamentale per il database)
-* Un client per testare le API (es. **Postman** o l'interfaccia integrata **Swagger UI**)
+* **Docker** e **Docker Desktop**
+* Un client per testare le API (es. **Postman** o **Swagger UI**)
 
 ---
 
 ## 💾 Configurazione Database
 
-Il progetto utilizza un database **PostgreSQL** configurato in ambiente isolato tramite Docker. Non è necessario installare PostgreSQL localmente sul proprio sistema operativo.
-
-I dati di configurazione e le credenziali all'avvio sono i seguenti:
-* **DBMS:** PostgreSQL 15 (Alpine)
-* **Database Name:** `eventhub_user`
+Il progetto utilizza **PostgreSQL** tramite Docker:
+* **Database Name:** `eventhub_db`
 * **Username:** `academy_user`
-* **Password:** `eventhub_pass`
+* **Password:** `academy_password`
 * **Porta:** `5432`
 
-Inoltre, è integrato **Adminer** come interfaccia web di gestione del database sulla porta `8080`.
+**Adminer** (interfaccia web per il database) è disponibile su `http://localhost:8090`
 
 ---
 
 ## 🐋 Comandi Docker Principali
 
-Tutta l'infrastruttura del database viene gestita tramite il file `docker-compose.yml`. Di seguito i comandi principali da lanciare nel terminale della cartella principale:
+```bash
+# Avviare il database in background
+docker compose up -d
 
-* **Avviare il database in background:**
-  ```bash
-  docker compose up -d
+# Fermare i container
+docker compose down
+
+# Vedere i log
+docker compose logs
+```
+
+---
+
+## 🚀 Avvio del Progetto
+
+```bash
+# Clona il repository
+git clone https://github.com/Bruca07/EventHub.git
+cd EventHub
+
+# Avvia il database
+docker compose up -d
+
+# Avvia l'applicazione
+./mvnw spring-boot:run
+```
+
+---
+
+## 📋 API Documentation
+
+Swagger UI disponibile su: `http://localhost:8080/swagger-ui.html`
+
+---
+
+## 👤 Credenziali Demo
+
+| Ruolo | Username | Password |
+|-------|----------|----------|
+| ADMIN | admin | admin123 |
+| ORGANIZER | organizer | org123 |
+| USER | user | user123 |

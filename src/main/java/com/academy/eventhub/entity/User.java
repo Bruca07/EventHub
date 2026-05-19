@@ -11,7 +11,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-
 @Entity
 @Data
 @Table(name = "users")
@@ -31,4 +30,5 @@ private boolean enabled;
 @OneToOne(cascade = CascadeType.ALL)
 @JoinColumn(name="profile_id")
  private Profile profile;
+
 }
