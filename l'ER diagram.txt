@@ -1,0 +1,80 @@
+erDiagram
+    USER {
+        int id PK
+        string username
+        string email
+        string password
+    }
+    PROFILE {
+        int id PK
+        int user_id FK
+        string firstName
+        string lastName
+        date birthDate
+    }
+    ROLE {
+        int id PK
+        string name
+    }
+    USER_ROLES {
+        int user_id FK
+        int role_id FK
+    }
+    VENUE {
+        int id PK
+        string name
+        string address
+        int capacity
+    }
+    EVENT {
+        int id PK
+        string title
+        date date
+        int venue_id FK
+        int organizer_id FK
+    }
+    TAG {
+        int id PK
+        string name
+    }
+    EVENT_TAGS {
+        int event_id FK
+        int tag_id FK
+    }
+    SPEAKER {
+        int id PK
+        string name
+        string curriculum
+    }
+    EVENT_SPEAKERS {
+        int event_id FK
+        int speaker_id FK
+    }
+    TICKET {
+        int id PK
+        int user_id FK
+        int event_id FK
+        string type
+        double price
+        string status
+    }
+    FEEDBACK {
+        int id PK
+        int user_id FK
+        int event_id FK
+        int rating
+        string comment
+    }
+
+    USER ||--|| PROFILE : "1:1"
+    USER }|..|{ ROLE : "N:M (via USER_ROLES)"
+    USER ||--o{ EVENT : "organizza (1:N)"
+    USER ||--o{ TICKET : "compra (1:N)"
+    USER ||--o{ FEEDBACK : "scrive (1:N)"
+    
+    VENUE ||--o{ EVENT : "ospita (1:N)"
+    
+    EVENT ||--o{ TICKET : "ha (1:N)"
+    EVENT ||--o{ FEEDBACK : "riceve (1:N)"
+    EVENT }|..|{ TAG : "N:M (via EVENT_TAGS)"
+    EVENT }|..|{ SPEAKER : "N:M (via EVENT_SPEAKERS)"

@@ -1,6 +1,6 @@
 # EventHub 🚀
 
-EventHub è una piattaforma backend sviluppata con Spring Boot per la gestione e l'organizzazione di eventi.
+EventHub è una piattaforma sviluppata con Spring Boot per la gestione e l'organizzazione di eventi.
 
 ---
 
@@ -37,15 +37,10 @@ docker compose down
 
 # Vedere i log
 docker compose logs
-```
 
----
-
-## 🚀 Avvio del Progetto
-
-```bash
+🚀 Avvio del Progetto
 # Clona il repository
-git clone https://github.com/Bruca07/EventHub.git
+git clone [https://github.com/Bruca07/EventHub.git](https://github.com/Bruca07/EventHub.git)
 cd EventHub
 
 # Avvia il database
@@ -53,20 +48,3 @@ docker compose up -d
 
 # Avvia l'applicazione
 ./mvnw spring-boot:run
-```
-
----
-
-## 📋 API Documentation
-
-Swagger UI disponibile su: `http://localhost:8080/swagger-ui.html`
-
----
-
-## 👤 Credenziali Demo
-
-| Ruolo | Username | Password |
-|-------|----------|----------|
-| ADMIN | admin | admin123 |
-| ORGANIZER | organizer | org123 |
-| USER | user | user123 |
