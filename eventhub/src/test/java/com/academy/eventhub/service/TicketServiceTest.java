@@ -15,32 +15,34 @@ import jakarta.transaction.Transactional;
 @SpringBootTest
 @Transactional
 public class TicketServiceTest {
-@Autowired
+
+    @Autowired
     private TicketService ticketService;
 
-      @Test
-      @WithMockUser(username = "mario")
-
+    @Test
+    @WithMockUser(username = "user_demo")
     void testBookEvent_DovrebbeLanciareEccezioneSeGiaPrenotato() {
 
         TicketDTO ticket = new TicketDTO();
         ticket.setEventId(1);
-        ticket.setUsername("mario_rossi");
+        ticket.setUsername("user_demo");
 
-        // Prima prenotazione
+        
         ticketService.bookEvent(1, ticket);
 
-        // Seconda prenotazione -> deve fallire
+        
         assertThrows(IllegalArgumentException.class, () -> {
             ticketService.bookEvent(1, ticket);
         });
 
+       
         assertThrows(ResourceNotFoundException.class, () -> {
-    ticketService.bookEvent(999, ticket);
-});
+            ticketService.bookEvent(999, ticket);
+        });
 
-    assertThrows(IllegalArgumentException.class, () -> {
-    ticketService.bookEvent(10, ticket);
-});
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            ticketService.bookEvent(7, ticket);
+        });
     }
 }
