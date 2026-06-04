@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il mio profilo - EventHub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-bookings.html">Le mie prenotazioni</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Il mio profilo</h2>
+
+        <div id="profilo-info">
+            <p>Caricamento profilo...</p>
+        </div>
+
+        <hr>
+
+        <h3>Modifica profilo</h3>
+        <div id="form-profilo">
+            <label>Nome:</label>
+            <input type="text" id="input-firstname" placeholder="Nome"><br>
+            <label>Cognome:</label>
+            <input type="text" id="input-lastname" placeholder="Cognome"><br>
+            <label>Biografia:</label>
+            <input type="text" id="input-bio" placeholder="Breve bio"><br>
+            <label>Città:</label>
+            <input type="text" id="input-city" placeholder="Città"><br>
+            <label>Foto (URL):</label>
+            <input type="text" id="input-photo" placeholder="URL foto"><br>
+            <button id="btn-salva-profilo">Salva modifiche</button>
+            <p id="msg-profilo"></p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

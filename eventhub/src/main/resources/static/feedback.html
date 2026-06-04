@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lascia un feedback - EventHub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-bookings.html">Le mie prenotazioni</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Lascia un feedback</h2>
+        <div id="evento-info"></div>
+
+        <div id="form-feedback">
+            <label for="rating">Voto (1-5):</label>
+            <select id="rating">
+                <option value="1">1 - Pessimo</option>
+                <option value="2">2 - Scarso</option>
+                <option value="3">3 - Nella media</option>
+                <option value="4">4 - Buono</option>
+                <option value="5">5 - Eccellente</option>
+            </select><br>
+
+            <label for="comment">Commento:</label>
+            <input type="text" id="comment" placeholder="Scrivi il tuo commento..."><br>
+
+            <button id="btn-invia">Invia feedback</button>
+            <p id="msg-feedback"></p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>
