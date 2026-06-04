@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I miei eventi - EventHub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Il mio profilo</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>I miei eventi</h2>
+
+        <div id="form-evento">
+            <h3 id="form-titolo">Crea nuovo evento</h3>
+            <input type="hidden" id="evento-id">
+
+            <label for="input-title">Titolo:</label>
+            <input type="text" id="input-title" placeholder="Titolo evento"><br>
+
+            <label for="input-description">Descrizione:</label>
+            <input type="text" id="input-description" placeholder="Descrizione"><br>
+
+            <label for="input-date">Data:</label>
+            <input type="date" id="input-date"><br>
+
+            <label for="input-maxSeats">Posti massimi:</label>
+            <input type="number" id="input-maxSeats" placeholder="Es. 100"><br>
+
+            <label for="input-venueId">ID Sede:</label>
+            <input type="number" id="input-venueId" placeholder="Es. 1"><br>
+
+            <label for="input-standardPrice">Prezzo Standard (€):</label>
+            <input type="number" id="input-standardPrice" placeholder="Es. 30"><br>
+
+            <label for="input-vipPrice">Prezzo VIP (€):</label>
+            <input type="number" id="input-vipPrice" placeholder="Es. 60"><br>
+
+            <label for="input-tagIds">ID Tag:</label>
+            <input type="text" id="input-tagIds" placeholder="Es. 1,2,3"><br>
+
+            <label for="input-speakerIds">ID Relatori:</label>
+            <input type="text" id="input-speakerIds" placeholder="Es. 1,2"><br>
+
+            <button id="btn-salva">Salva evento</button>
+            <button id="btn-annulla" style="display:none;">Annulla</button>
+            <p id="msg-form"></p>
+        </div>
+
+        <hr>
+
+        <div id="lista-eventi-organizer"></div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/organizer-events.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:15
+    container_name: eventhub-db
+    restart: always
+    ports:
+      - "5432:5432" 
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: eventhub_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: eventhub-adminer
+    restart: always
+    ports:
+      - "8090:8080"
+    depends_on:
+     - db
+
+volumes:
+  postgres_data:

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettaglio Evento - EventHub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-bookings.html" id="bookings-link">Le mie prenotazioni</a>
+            <a href="admin.html" id="admin-link" style="display:none;">Pannello Admin</a>
+            <a href="organizer-events.html" id="organizer-link" style="display:none;">I miei eventi</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="evento-dettaglio">
+            <p>Caricamento evento...</p>
+        </div>
+
+        <div id="form-prenotazione" style="display:none;">
+            <h3>Prenota un biglietto</h3>
+            <label for="ticket-type">Tipo biglietto:</label>
+            <select id="ticket-type">
+                <option value="STANDARD">Standard</option>
+                <option value="VIP">VIP</option>
+            </select>
+            <br><br>
+            <button id="btn-prenota">Prenota</button>
+            <p id="msg-prenotazione"></p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/event-detail.js"></script>
+</body>
+</html>

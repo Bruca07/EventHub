@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pannello Admin - EventHub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Pannello Admin</h2>
+
+        <div id="tab-nav">
+            <button onclick="showTab('utenti')">Utenti</button>
+            <button onclick="showTab('venue')">Sedi</button>
+            <button onclick="showTab('speaker')">Speaker</button>
+            <button onclick="showTab('tag')">Tag</button>
+            <button onclick="showTab('feedbacks')">Feedback</button>
+        </div>
+
+        <hr>
+
+        <div id="tab-utenti" class="tab-content">
+            <h3>Gestione Utenti</h3>
+            <div id="lista-utenti"></div>
+        </div>
+
+        <div id="tab-venue" class="tab-content" style="display:none;">
+            <h3>Gestione Sedi</h3>
+            <div id="form-venue">
+                <h4 id="form-venue-titolo">Aggiungi sede</h4>
+                <input type="hidden" id="venue-id">
+                <label>Nome:</label>
+                <input type="text" id="venue-name" placeholder="Nome sede"><br>
+                <label>Indirizzo:</label>
+                <input type="text" id="venue-address" placeholder="Indirizzo"><br>
+                <label>Città:</label>
+                <input type="text" id="venue-city" placeholder="Città"><br>
+                <label>Capienza:</label>
+                <input type="number" id="venue-capacity" placeholder="Es. 500"><br>
+                <button onclick="salvaVenue()">Salva sede</button>
+                <button id="btn-annulla-venue" style="display:none;" onclick="resetFormVenue()">Annulla</button>
+                <p id="msg-venue"></p>
+            </div>
+            <hr>
+            <div id="lista-venue"></div>
+        </div>
+
+        <div id="tab-speaker" class="tab-content" style="display:none;">
+            <h3>Gestione Speaker</h3>
+            <div id="form-speaker">
+                <h4>Aggiungi speaker</h4>
+                <label>Nome:</label>
+                <input type="text" id="speaker-firstname" placeholder="Nome"><br>
+                <label>Cognome:</label>
+                <input type="text" id="speaker-lastname" placeholder="Cognome"><br>
+                <label>Azienda:</label>
+                <input type="text" id="speaker-company" placeholder="Azienda"><br>
+                <button onclick="salvaSpeaker()">Salva speaker</button>
+                <p id="msg-speaker"></p>
+            </div>
+            <hr>
+            <div id="lista-speaker"></div>
+        </div>
+
+        <div id="tab-tag" class="tab-content" style="display:none;">
+            <h3>Gestione Tag</h3>
+            <div id="form-tag">
+                <h4>Aggiungi tag</h4>
+                <label>Nome:</label>
+                <input type="text" id="tag-name" placeholder="Es. Musica, Teatro..."><br>
+                <button onclick="salvaTag()">Salva tag</button>
+                <p id="msg-tag"></p>
+            </div>
+            <hr>
+            <div id="lista-tag"></div>
+        </div>
+
+        <div id="tab-feedbacks" class="tab-content" style="display:none;">
+            <h3>Moderazione Feedback</h3>
+            <div id="lista-feedbacks"></div>
+        </div>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
