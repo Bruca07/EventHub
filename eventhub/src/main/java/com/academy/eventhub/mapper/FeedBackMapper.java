@@ -14,6 +14,7 @@ public interface FeedBackMapper {
     // Entity a DTO
     @Mapping(source = "event.id", target = "eventId")
     @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "user.username", target = "username")
 
     FeedBackDTO toDTO(FeedBack feedBack);
     List<FeedBackDTO> toDTOList(List<FeedBack> feedbacks);

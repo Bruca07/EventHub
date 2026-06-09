@@ -17,6 +17,8 @@ private Integer eventId;
 @NotNull(message = "userId obbligatorio")
 private Integer userId;
 
+private String username;
+
 @Min(1)
 @Max(5)
 private int rating;

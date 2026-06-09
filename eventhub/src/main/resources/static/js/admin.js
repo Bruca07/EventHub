@@ -340,7 +340,7 @@ async function loadFeedbacks() {
                 const div = document.createElement('div');
                 div.className = 'event-card';
                 div.innerHTML = `
-                    <p><strong>Evento ID:</strong> ${f.eventId} — <strong>Utente ID:</strong> ${f.userId}</p>
+                    <p><strong>Evento ID:</strong> ${f.eventId} — <strong>Utente:</strong> ${f.username || 'N/D'}</p>
                     <p><strong>Voto:</strong> ${'⭐'.repeat(f.rating)}</p>
                     <p>${f.comment || ''}</p>
                     <button onclick="eliminaFeedback(${f.id})" style="background-color:#e74c3c;">Elimina</button>
