@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bookingsLink = document.getElementById('bookings-link');
     const adminLink = document.getElementById('admin-link');
     const profileLink = document.getElementById('profile-link');
+    const organizerLink = document.getElementById('organizer-link');
 
     if (logoutLink) {
         logoutLink.addEventListener('click', (e) => {
@@ -24,13 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bookingsLink) bookingsLink.style.display = 'none';
         if (adminLink) adminLink.style.display = 'none';
         if (profileLink) profileLink.style.display = 'none';
+        if (organizerLink) organizerLink.style.display = 'none';
     } else {
         if (loginLink) loginLink.style.display = 'none';
         if (signupLink) signupLink.style.display = 'none';
         if (logoutLink) logoutLink.style.display = 'inline';
-        if (bookingsLink) bookingsLink.style.display = 'inline';
-        if (profileLink) profileLink.style.display = 'inline';
+        if (bookingsLink) bookingsLink.style.display = (role === 'ROLE_USER') ? 'inline' : 'none';
+        if (profileLink) profileLink.style.display = (role === 'ROLE_USER') ? 'inline' : 'none';
         if (adminLink) adminLink.style.display = (role === 'ROLE_ADMIN') ? 'inline' : 'none';
+        if (organizerLink) organizerLink.style.display = (role === 'ROLE_ORGANIZER') ? 'inline' : 'none';
     }
 
     document.getElementById('btn-filtra').addEventListener('click', () => {
