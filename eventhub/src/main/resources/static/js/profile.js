@@ -38,11 +38,12 @@ async function loadProfilo() {
             profiloId = profilo.id;
 
             document.getElementById('profilo-info').innerHTML = `
-                <p><strong>Nome:</strong> ${profilo.firstName || 'N/D'}</p>
-                <p><strong>Cognome:</strong> ${profilo.lastName || 'N/D'}</p>
-                <p><strong>Bio:</strong> ${profilo.bio || 'N/D'}</p>
-                <p><strong>Città:</strong> ${profilo.city || 'N/D'}</p>
-            `;
+            ${profilo.photo ? `<img src="${profilo.photo}" alt="Foto profilo" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">` : ''}
+            <p><strong>Nome:</strong> ${profilo.firstName || 'N/D'}</p>
+            <p><strong>Cognome:</strong> ${profilo.lastName || 'N/D'}</p>
+            <p><strong>Bio:</strong> ${profilo.bio || 'N/D'}</p>
+            <p><strong>Città:</strong> ${profilo.city || 'N/D'}</p>
+        `;
 
             document.getElementById('input-firstname').value = profilo.firstName || '';
             document.getElementById('input-lastname').value = profilo.lastName || '';

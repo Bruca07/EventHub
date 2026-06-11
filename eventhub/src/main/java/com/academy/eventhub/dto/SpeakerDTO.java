@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class SpeakerDTO {
-
+private Integer id;
 @NotBlank(message = "firstName obbligatorio") 
 private String firstName;
 

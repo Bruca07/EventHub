@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class VenueDTO {
+private Integer id;
+
 @NotBlank(message = "name obbligatorio") 
 private String name;
 

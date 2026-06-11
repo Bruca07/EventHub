@@ -9,6 +9,7 @@ import com.academy.eventhub.dto.VenueDTO;
 import com.academy.eventhub.entity.Venue;
 import com.academy.eventhub.exception.ResourceNotFoundException;
 import com.academy.eventhub.mapper.VenueMapper;
+import com.academy.eventhub.repository.EventRepository;
 import com.academy.eventhub.repository.VenueRepository;
 
 @Service
@@ -19,6 +20,9 @@ public class VenueService {
 
     @Autowired
     VenueMapper mapper;
+
+    @Autowired
+    EventRepository eventRepo;
 
     public List<VenueDTO> findAll(){
         return mapper.toDTOList(venueRepo.findAll());
@@ -51,9 +55,18 @@ public class VenueService {
         return mapper.toDTO(updateVenue);
     }
 
-    public void delete(int id){
-        venueRepo.deleteById(id);
-    }
+    public void delete(int id) {
+    Venue venue = venueRepo.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("Venue not found"));
+    
+    // Sgancia gli eventi dalla sede prima di eliminarla
+    venue.getEvents().forEach(event -> {
+        event.setVenue(null);
+        eventRepo.save(event);
+    });
+    
+    venueRepo.deleteById(id);
+}
 
 
 }

@@ -3,6 +3,7 @@ package com.academy.eventhub.mapper;
 import java.util.List;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import com.academy.eventhub.dto.VenueDTO;
 import com.academy.eventhub.entity.Venue;
@@ -11,6 +12,7 @@ import com.academy.eventhub.entity.Venue;
 public interface VenueMapper {
 
     // Da Entity a VenueDTO
+    @Mapping(source = "id", target = "id")
     VenueDTO toDTO(Venue venue);
     List<VenueDTO>toDTOList(List<Venue> venues);
 
