@@ -93,7 +93,7 @@ async function loadMieiEventi() {
                     <p><strong>Relatori:</strong> ${speakerNomi}</p>
                     <p><strong>Argomenti:</strong> ${tagNomi}</p>
                     ${eventoPassato
-                        ? '<p><strong>Evento concluso</strong></p>'
+                        ? '<p><strong>🔴 Evento concluso</strong></p>'
                         : `<p><strong>Posti totali:</strong> ${event.maxSeats}</p>
                            <p><strong>Posti disponibili:</strong> ${event.availableSeats}</p>`
                     }
@@ -102,8 +102,11 @@ async function loadMieiEventi() {
                     <p><strong>Valutazione media:</strong> ${rating > 0 ? '⭐'.repeat(rating) : 'Nessuna recensione'}</p>
                     ${feedbackHtml}
                     ${partecipantiHtml}
-                    <button onclick="modificaEvento(${event.id})">Modifica</button>
-                    <button onclick="eliminaEvento(${event.id})" style="background-color:#e74c3c;">Elimina</button>
+                    ${eventoPassato
+                        ? ''
+                        : `<button onclick="modificaEvento(${event.id})">Modifica</button>
+                           <button onclick="eliminaEvento(${event.id})" style="background-color:#e74c3c;">Elimina</button>`
+                    }
                 `;
                 lista.appendChild(div);
             }
