@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         signupForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const data = {
-                username: signupForm.username.value.trim(),
+                email: signupForm.email.value.trim(),
                 password: signupForm.password.value
             };
 

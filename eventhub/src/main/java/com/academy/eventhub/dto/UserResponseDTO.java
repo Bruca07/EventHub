@@ -9,7 +9,8 @@ import lombok.Data;
 public class UserResponseDTO {
     
 private int id;
-private String username;  
+private String username; 
+private String email; 
 private boolean enabled;
 private Role role;
 }

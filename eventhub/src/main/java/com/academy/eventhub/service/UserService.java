@@ -35,7 +35,9 @@ public class UserService {
    } 
 
    public UserResponseDTO register(UserRequestDTO dto){
-    User user = mapper.toEntity(dto); 
+    User user = new User();
+    user.setEmail(dto.getEmail());
+    user.setUsername(dto.getEmail()); 
     user.setPassword(pw.encode(dto.getPassword()));
     user.setEnabled(true);
     Role defaultRole = roleRepo.findByName("ROLE_USER");

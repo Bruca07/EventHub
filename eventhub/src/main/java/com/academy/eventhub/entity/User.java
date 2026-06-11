@@ -25,6 +25,7 @@ private int id;
 private String username;
 private String password;
 private boolean enabled; 
+private String email;
 
 @ManyToOne
  @JoinColumn(name="role_id")
