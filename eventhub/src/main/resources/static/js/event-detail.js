@@ -1,12 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const authHeader = sessionStorage.getItem('authHeader');
     const role = sessionStorage.getItem('userRole');
+
+    const bookingsLink = document.getElementById('bookings-link');
     const adminLink = document.getElementById('admin-link');
     const organizerLink = document.getElementById('organizer-link');
-    if (role === 'ROLE_ADMIN' && adminLink) adminLink.style.display = 'inline';
-    if (role === 'ROLE_ORGANIZER' && organizerLink) organizerLink.style.display = 'inline';
-
     const logoutLink = document.getElementById('logout-link');
+
+    // Gestione navbar
+    if (authHeader) {
+        if (bookingsLink && role === 'ROLE_USER') bookingsLink.style.display = 'inline';
+        if (adminLink && role === 'ROLE_ADMIN') adminLink.style.display = 'inline';
+        if (organizerLink && role === 'ROLE_ORGANIZER') organizerLink.style.display = 'inline';
+        if (logoutLink) logoutLink.style.display = 'inline';
+    } else {
+        if (logoutLink) logoutLink.style.display = 'none';
+    }
+
+    // Logout
     if (logoutLink) {
         logoutLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -66,7 +78,7 @@ async function loadEventDetail(eventId) {
                     <p><strong>Relatori:</strong> ${speakerNomi}</p>
                     <p><strong>Argomenti:</strong> ${tagNomi}</p>
                     <p><strong>Descrizione:</strong> ${event.description || 'N/D'}</p>
-                    <p><strong>Evento concluso</strong></p>
+                    <p><strong>🔴 Evento concluso</strong></p>
                 `;
             } else {
                 dettaglio.innerHTML = `
@@ -157,7 +169,7 @@ async function bookEvent(eventId) {
                 'Authorization': authHeader,
                 'X-Requested-With': 'XMLHttpRequest'
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 type: ticketType,
                 status: 'ACTIVE',
                 eventId: parseInt(eventId),
